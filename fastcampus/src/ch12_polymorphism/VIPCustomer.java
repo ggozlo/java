@@ -1,4 +1,4 @@
-package ch11_inheritance;
+package ch12_polymorphism;
 
 public class VIPCustomer extends Customer
 {
@@ -9,7 +9,7 @@ public class VIPCustomer extends Customer
 	{
 		super(customerID, customerName);
 		bonusRatio = 0.05;
-		saleRatio = 0.01;
+		saleRatio = 0.1;
 		customerGrade = "VIP";
 		
 		System.out.println("VIPCustomer Call");
