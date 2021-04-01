@@ -24,12 +24,15 @@ public class Score
 		ScoreProcess sp = new ScoreProcess();
 		while(true)
 		{
-			System.out.println("1: 입력, 2:출력, 3:계산");
+			System.out.println("1: 입력, 2:출력, 3:검색, 4:수정, 5:삭제");
 			int select = sc.nextInt();
-			if(select ==1) 	si.Input(alist);
+			if(select ==1) 	si.Input(alist,sc);
 			else if(select == 2) so.showInfo(alist);
-//			else if(select == 3) ScoreProcess.scoreprocess(alist);
+			else if(select == 3) SearchScore.search(sc,alist);
+			else if(select == 4) Retouch.retouch(alist, sc);
+			else if(select == 5) RemoveScore.remove(alist, sc);
 			else {sc.close(); break;}
+			System.out.println("====================================");
 		}
 	}
 	
