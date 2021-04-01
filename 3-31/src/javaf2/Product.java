@@ -15,25 +15,14 @@ public class Product
 	{
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Product> list = new ArrayList<Product>();	
+		DataImport di = DataImport.getInstance();
 		
 		while(true)
 		{
-			System.out.println("1:입력, 2:출력, 3:검색, 4:자료 수정, 5:상품명별 계산, 6:오름차순출력");
-			System.out.print("원하는 기능을 선택하시오 :");
-			int select=0;
-			
-			try
-			{
-				select = sc.nextInt();
-			}
-			catch(Exception e)
-			{
-				System.out.println(e.getMessage());
+			System.out.println("1:입력, 2:출력, 3:검색, 4:자료 수정, 5:삭제, 6:정렬출력, 7.수익 총합");
+			int select=di.InputInt(sc, "원하는 기능");
+			System.out.println("---------------------------------------------");
 
-				sc.nextLine();
-			}
-			
-			
 			switch (select) 
 			{
 			case 1:
@@ -49,44 +38,30 @@ public class Product
 				ProductReform.reformProduct(list, sc);
 				break;
 			case 5:
+				ProductRemove.remove(list, sc);
 				break;
 			case 6:
 			    ProductCompare.compareProduct(list, sc);
 			    break;
+			case 7: 
+				ProfitSum.profitsum(list);
 			default:
 				break;
 			}
+			System.out.println("=============================================================");
 		}
 	}
 
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	public Product(String goodsname, int quantity, int price,int profit) {
+	public Product(String goodsname, int quantity, int price,int profit) 
+	{
 		super();
 		this.goodsname = goodsname;
 		this.quantity = quantity;
 		this.price = price;
 		this.profit = profit;
 	}
-
-
-
-
-
-
-
-
-
-
-
 	public String getGoodsname() {
 		return goodsname;
 	}
@@ -118,6 +93,4 @@ public class Product
 	public void setProfit(int profit) {
 		this.profit = profit;
 	}
-	
-	
 }
