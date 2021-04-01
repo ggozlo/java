@@ -23,15 +23,19 @@ public class CustomerTest
 		customerList.add(customerP);
 		customerList.add(customerK);
 		
-		customerList.forEach(s->System.out.println(s.toString()));
-		
-		int price = 10000;
-		for(Customer customer : customerList)
+//		customerList.forEach(s->System.out.println(s.toString()));
+//		
+//		int price = 10000;
+//		for(Customer customer : customerList)
+//		{
+//			int cost = customer.calcPrice(price);
+//			System.out.println(customer.getCustomerName()+" 님 지불 "+ cost);
+//			System.out.println("보너스 포인트는 "+customer.bonusPoint);
+//		}
+		if(customerE instanceof GoldCustomer)
 		{
-			int cost = customer.calcPrice(price);
-			System.out.println(customer.getCustomerName()+" 님 지불 "+ cost);
-			System.out.println("보너스 포인트는 "+customer.bonusPoint);
+			GoldCustomer vc = (GoldCustomer)customerE; // 업캐스팅 ( 인스턴스 생성이 맞는경우만 가능)
+			System.out.println(customerE.toString()); 
 		}
 	}
-
 }
