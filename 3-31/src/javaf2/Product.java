@@ -1,5 +1,8 @@
 package javaf2;
-
+// 1파일 입력
+// 2상품명별 합계
+// 3 상품명, 매출액 내림정렬
+// 4 상품명별 합계
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,12 +22,15 @@ public class Product
 		
 		while(true)
 		{
-			System.out.println("1:입력, 2:출력, 3:검색, 4:자료 수정, 5:삭제, 6:정렬출력, 7.수익 총합");
+			System.out.println("0:파일입력, 1:입력, 2:출력, 3:검색, 4:자료 수정, 5:삭제, 6:정렬출력, 7.수익 총합, 8.상품별수익합, 9.선택상품수익합");
 			int select=di.InputInt(sc, "원하는 기능");
 			System.out.println("---------------------------------------------");
 
 			switch (select) 
 			{
+			case 0:
+				ProductFileInput.fileInput(list);
+				break;
 			case 1:
 				ProductInput.input(list, sc);
 				break;
@@ -45,6 +51,13 @@ public class Product
 			    break;
 			case 7: 
 				ProfitSum.profitsum(list);
+				break;
+			case 8: 
+				ProductEachSum.eachSum(list);
+				break;
+			case 9: 
+				ProductSearchSum.searchsum(list, sc);
+				break;
 			default:
 				break;
 			}

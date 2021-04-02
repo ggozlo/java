@@ -25,7 +25,7 @@ public class ProductSearch
 			}
 			else
 			{
-			list.stream().filter(s -> s.getGoodsname().contains(name))
+			list.stream().filter(s -> s.getGoodsname().equals(name))
 			.forEach(s -> System.out.println(s.getGoodsname() + " 수량 : "+s.getQuantity()+" 가격 : "+ s.getPrice()+" 이익 :"+DF.df.format( s.getProfit())));
 			}
 		}

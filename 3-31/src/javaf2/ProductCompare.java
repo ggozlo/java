@@ -14,7 +14,7 @@ public class ProductCompare
 		}
 		else
 		{
-			list.stream().sorted(Comparator.comparing(Product :: getProfit).reversed())
+			list.stream().sorted(Comparator.comparing(Product :: getGoodsname).thenComparing(Product::getProfit))
 			.forEach(s-> System.out.println(s.getGoodsname() + " 수량 : "+s.getQuantity()+" 가격 : "+ s.getPrice()+" 이익 :"+DF.df.format(s.getProfit())));
 		}
 	}
