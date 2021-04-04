@@ -1,0 +1,10 @@
+package ch19_interface3;
+
+public interface Queue
+{
+	void enQueue(String title);
+	
+	String deQueue();
+	
+	int getSize();
+}
